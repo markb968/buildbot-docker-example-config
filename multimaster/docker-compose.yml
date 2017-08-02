@@ -15,11 +15,11 @@ services:
       - 9989:9989   # for external workers
 
   buildbot:
-    image: buildbot/buildbot-master:latest
+    image: buildbot/buildbot-master:v0.9.9.post2
     env_file: db.env
     environment:
         - BUILDBOT_CONFIG_DIR=config
-        - BUILDBOT_CONFIG_URL=https://github.com/buildbot/buildbot-docker-example-config/archive/master.tar.gz
+        - BUILDBOT_CONFIG_URL=https://github.com/markb968/buildbot-docker-example-config/archive/master.tar.gz
         - BUILDBOT_WORKER_PORT=9989
         - BUILDBOT_WEB_URL=http://localhost:8080/
         - BUILDBOT_WEB_PORT=8080
